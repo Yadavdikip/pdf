@@ -1,0 +1,591 @@
+.pdf-to-excel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.converter-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.converter-header h1 {
+  color: #333;
+  font-size: 2.2em;
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* File Selection Section */
+.file-selection-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.select-pdf-dropbox {
+  border: 2px dashed #bdc3c7;
+  border-radius: 10px;
+  padding: 30px 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  min-width: 300px;
+}
+
+.select-pdf-dropbox:hover {
+  border-color: #007bff;
+  background-color: #f0f8ff;
+  transform: translateY(-2px);
+}
+
+.upload-icon {
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+.dropbox-text {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+}
+
+.dropbox-hint {
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.cloud-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.cloud-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.solve-btn {
+  border-color: #4285f4;
+  color: #4285f4;
+}
+
+.solve-btn:hover {
+  background: #4285f4;
+  color: white;
+}
+
+.dropbox-btn {
+  border-color: #0061ff;
+  color: #0061ff;
+}
+
+.dropbox-btn:hover {
+  background: #0061ff;
+  color: white;
+}
+
+/* Main Content */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Left Section - PDF Preview */
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.selected-pdf-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.section-heading {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.pdf-preview-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  min-height: 500px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.pdf-preview {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.file-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background-color: #f8f9fa;
+  gap: 15px;
+}
+
+.file-icon {
+  color: #e74c3c;
+}
+
+.file-info {
+  flex: 1;
+}
+
+.file-name {
+  margin: 0 0 5px 0;
+  color: #2c3e50;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.file-details {
+  display: flex;
+  gap: 15px;
+  font-size: 0.85em;
+  color: #7f8c8d;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  color: #e74c3c;
+  transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: #ffe6e6;
+}
+
+.pdf-content-preview {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.conversion-preview {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  height: 100%;
+}
+
+.preview-source, .preview-target {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.preview-source h5, .preview-target h5 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.preview-arrow {
+  font-size: 2em;
+  color: #007bff;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.pdf-pages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pdf-page {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  background: #f8f9fa;
+}
+
+.page-number {
+  font-size: 0.8em;
+  color: #7f8c8d;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.text-line {
+  height: 6px;
+  background: #dee2e6;
+  border-radius: 2px;
+}
+
+.text-line.short {
+  width: 70%;
+}
+
+.table-preview {
+  margin-top: 8px;
+  border: 1px solid #adb5bd;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.table-row {
+  display: flex;
+}
+
+.table-cell {
+  flex: 1;
+  padding: 4px 6px;
+  border-right: 1px solid #adb5bd;
+  background: white;
+  font-size: 0.7em;
+  color: #495057;
+}
+
+.table-cell:last-child {
+  border-right: none;
+}
+
+.excel-preview {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
+}
+
+.excel-sheet {
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet-header {
+  background: #28a745;
+  color: white;
+  padding: 8px 12px;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.excel-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.column-headers {
+  display: flex;
+  background: #e9ecef;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.column-header {
+  width: 60px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #dee2e6;
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.8em;
+}
+
+.data-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.data-row {
+  display: flex;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.row-header {
+  width: 30px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  font-weight: 500;
+  color: #495057;
+  font-size: 0.8em;
+}
+
+.data-cell {
+  width: 60px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  border-right: 1px solid #dee2e6;
+  font-size: 0.75em;
+  color: #6c757d;
+}
+
+.data-cell:last-child {
+  border-right: none;
+}
+
+.no-file-selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 60px 20px;
+  color: #bdc3c7;
+  text-align: center;
+}
+
+.no-file-selected p {
+  margin: 20px 0 10px 0;
+  font-size: 1.2em;
+  color: #7f8c8d;
+}
+
+.no-file-selected span {
+  font-size: 0.9em;
+}
+
+.no-file-icon {
+  color: #ecf0f1;
+}
+
+/* Right Section - Conversion Actions */
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 20px;
+}
+
+.conversion-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.convert-excel-btn, .download-excel-btn {
+  padding: 20px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  min-height: 70px;
+}
+
+.convert-excel-btn {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.convert-excel-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.convert-excel-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4);
+}
+
+.download-excel-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.download-excel-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.download-excel-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+}
+
+/* Conversion Settings */
+.conversion-settings {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.settings-heading {
+  margin: 0 0 20px 0;
+  color: #2c3e50;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.setting-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.setting-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.setting-option input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Conversion Info */
+.conversion-info {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.conversion-info h4 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.info-value {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .right-section {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .pdf-to-excel-container {
+    padding: 15px;
+  }
+  
+  .file-selection-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .select-pdf-dropbox {
+    min-width: auto;
+    padding: 25px 30px;
+  }
+  
+  .cloud-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cloud-btn {
+    width: 100%;
+  }
+  
+  .conversion-preview {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .preview-arrow {
+    transform: rotate(90deg);
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .convert-excel-btn, .download-excel-btn {
+    padding: 15px 20px;
+    min-height: 60px;
+    font-size: 1em;
+  }
+}

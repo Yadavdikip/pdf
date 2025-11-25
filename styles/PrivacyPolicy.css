@@ -1,0 +1,32 @@
+.privacy-policy-page {
+  padding: 100px 20px 50px;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.privacy-policy-page .container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.privacy-policy-page h1 {
+  font-size: 2.5rem;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.privacy-policy-page h2 {
+  font-size: 1.5rem;
+  color: #374151;
+  margin: 30px 0 15px;
+}
+
+.privacy-policy-page p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}

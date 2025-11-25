@@ -1,0 +1,219 @@
+.converter-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  color: #2c3e50;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.section-title h2 {
+  color: #34495e;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.upload-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.upload-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+.upload-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.upload-btn:hover {
+  border-color: #3498db;
+  transform: translateY(-2px);
+}
+
+.drive-btn:hover {
+  background: #f0f8ff;
+}
+
+.dropbox-btn:hover {
+  background: #f0f8ff;
+}
+
+.selected-file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px dashed #ddd;
+}
+
+.file-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.file-size {
+  font-weight: bold;
+  color: #7f8c8d;
+}
+
+.file-name {
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.convert-btn, .download-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.convert-btn {
+  background: #3498db;
+  color: white;
+}
+
+.convert-btn:hover:not(:disabled) {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.convert-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.convert-btn.converting {
+  background: #f39c12;
+}
+
+.download-btn {
+  background: #27ae60;
+  color: white;
+}
+
+.download-btn:hover {
+  background: #229954;
+  transform: translateY(-2px);
+}
+
+.cloud-upload-section {
+  margin-top: 30px;
+}
+
+.cloud-upload-section .section-title h3 {
+  color: #34495e;
+  margin-bottom: 15px;
+}
+
+.cloud-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.cloud-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 2px solid #3498db;
+  border-radius: 6px;
+  background: white;
+  color: #3498db;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cloud-btn:hover:not(:disabled) {
+  background: #3498db;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.cloud-btn:disabled {
+  border-color: #bdc3c7;
+  color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.status-message {
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.status-message.converting {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.status-message.success {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .selected-file {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .upload-buttons, .cloud-buttons {
+    flex-direction: column;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .convert-btn, .download-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

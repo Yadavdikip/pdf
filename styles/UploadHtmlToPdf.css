@@ -1,0 +1,4 @@
+/* Compatibility shim: the original stylesheet in this project was accidentally named
+   `UplaodHtmlToPdf.css` (typo). Import that file so components importing
+   `UploadHtmlToPdf.css` work without duplicating styles. */
+@import "./UplaodHtmlToPdf.css";

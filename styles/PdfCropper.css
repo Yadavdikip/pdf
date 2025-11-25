@@ -1,0 +1,420 @@
+.pdf-cropper-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.pdf-cropper-container.dark-mode {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  color: #e2e8f0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.pdf-cropper-container.dark-mode .header {
+  background: rgba(45, 55, 72, 0.95);
+  color: #e2e8f0;
+}
+
+.pdf-cropper-container.dark-mode .header h1 {
+  color: #e2e8f0;
+}
+
+.date-display {
+  text-align: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 120px;
+}
+
+.calendar-date {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.calendar-day {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.header h1 {
+  color: #333;
+  font-size: 2.5rem;
+  margin: 0;
+  text-align: center;
+  flex: 1;
+}
+
+.dark-mode-toggle {
+  background: none;
+  border: 2px solid #667eea;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #667eea;
+}
+
+.dark-mode-toggle:hover {
+  background: #667eea;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.pdf-cropper-container.dark-mode .dark-mode-toggle {
+  border-color: #e2e8f0;
+  color: #e2e8f0;
+}
+
+.pdf-cropper-container.dark-mode .dark-mode-toggle:hover {
+  background: #e2e8f0;
+  color: #2d3748;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* Left Section Styles */
+.select-pdf-section {
+  margin-bottom: 20px;
+}
+
+.dropbox {
+  border: 3px dashed #667eea;
+  border-radius: 15px;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.dropbox:hover {
+  border-color: #764ba2;
+  background-color: rgba(255, 255, 255, 1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.dropbox-content .dropbox-icon {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.dropbox-content p {
+  margin: 5px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.dropbox-hint {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+  font-weight: normal;
+}
+
+.cloud-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.cloud-btn {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid #667eea;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.cloud-btn:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.selected-pdf-section h3 {
+  margin-bottom: 15px;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.a4-preview {
+  border: 3px solid white;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.95);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+}
+
+.pdf-preview {
+  text-align: center;
+  width: 100%;
+}
+
+.pdf-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.pdf-info h4 {
+  margin: 10px 0;
+  color: #333;
+  word-break: break-word;
+}
+
+.pdf-info p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.pdf-status {
+  color: #28a745 !important;
+  font-weight: bold;
+  margin-top: 15px !important;
+}
+
+.empty-preview {
+  text-align: center;
+  color: #999;
+}
+
+.pdf-placeholder {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.empty-preview .hint {
+  font-size: 1rem;
+  margin-top: 15px;
+  color: #667eea;
+  font-weight: bold;
+}
+
+/* Right Section Styles */
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.other-function-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+}
+
+.other-function-section h3 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.function-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.func-btn {
+  padding: 18px 20px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.func-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.func-btn .btn-icon {
+  font-size: 1.3rem;
+}
+
+.crop-pdf-btn {
+  background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.crop-pdf-btn:hover {
+  box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
+}
+
+.quality-control {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid #667eea;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+}
+
+.quality-control label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.quality-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #ddd;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.quality-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #667eea;
+  cursor: pointer;
+}
+
+.download-cloud-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cloud-download-btn {
+  padding: 18px 20px;
+  border: 2px solid #28a745;
+  border-radius: 12px;
+  background: white;
+  color: #28a745;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.cloud-download-btn:hover {
+  background: #28a745;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
+}
+
+/* Hints Section */
+.hints-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 15px;
+  border-left: 6px solid #667eea;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+}
+
+.hints-section h3 {
+  margin-bottom: 15px;
+  color: #667eea;
+  font-size: 1.3rem;
+}
+
+.hints-section ul {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.hints-section li {
+  margin-bottom: 12px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .header h1 {
+    order: -1;
+  }
+  
+  .cloud-buttons {
+    flex-direction: column;
+  }
+  
+  .func-btn, .cloud-btn, .cloud-download-btn {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}

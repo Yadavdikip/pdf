@@ -1,0 +1,368 @@
+.pdf-to-word-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.converter-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.converter-header h1 {
+  color: #2c3e50;
+  font-size: 2.5em;
+  margin: 0;
+  font-weight: 600;
+}
+
+.converter-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Left Section Styles */
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.pdf-dropbox {
+  border: 2px dashed #bdc3c7;
+  border-radius: 12px;
+  padding: 50px 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+}
+
+.pdf-dropbox:hover {
+  border-color: #3498db;
+  background-color: #e3f2fd;
+  transform: translateY(-2px);
+}
+
+.upload-icon {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.dropbox-text {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+}
+
+.dropbox-hint {
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 0.95em;
+}
+
+.selected-pdf-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.section-heading {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.a4-preview-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  min-height: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.pdf-preview {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background-color: #f8f9fa;
+  gap: 15px;
+}
+
+.file-icon {
+  color: #e74c3c;
+}
+
+.file-details {
+  flex: 1;
+}
+
+.file-name {
+  margin: 0 0 5px 0;
+  color: #2c3e50;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.file-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 0.9em;
+  color: #7f8c8d;
+}
+
+.remove-pdf-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  color: #e74c3c;
+  transition: background-color 0.3s ease;
+}
+
+.remove-pdf-btn:hover {
+  background-color: #ffe6e6;
+}
+
+.pdf-preview-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.preview-pages {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mock-page {
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.page-header {
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.page-content {
+  color: #7f8c8d;
+  font-size: 0.9em;
+}
+
+.mock-text {
+  margin-top: 10px;
+}
+
+.text-line {
+  height: 12px;
+  background: #ecf0f1;
+  margin-bottom: 6px;
+  border-radius: 2px;
+}
+
+.text-line.short {
+  width: 70%;
+}
+
+.more-pages {
+  text-align: center;
+  padding: 20px;
+  color: #7f8c8d;
+  font-style: italic;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.no-pdf-selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 60px 20px;
+  color: #bdc3c7;
+  text-align: center;
+}
+
+.no-pdf-selected p {
+  margin: 20px 0 10px 0;
+  font-size: 1.2em;
+  color: #7f8c8d;
+}
+
+.no-pdf-selected span {
+  font-size: 0.9em;
+}
+
+.no-file-icon {
+  color: #ecf0f1;
+}
+
+/* Right Section Styles */
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.conversion-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.convert-to-word-btn {
+  padding: 18px 30px;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+}
+
+.convert-to-word-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.convert-to-word-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4);
+}
+
+.download-word-btn {
+  padding: 18px 30px;
+  background: linear-gradient(135deg, #27ae60, #229954);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(39, 174, 96, 0.3);
+}
+
+.download-word-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.download-word-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(39, 174, 96, 0.4);
+}
+
+.conversion-settings {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.conversion-settings h4 {
+  margin: 0 0 20px 0;
+  color: #2c3e50;
+  font-size: 1.2em;
+}
+
+.setting-group {
+  margin-bottom: 15px;
+}
+
+.setting-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #34495e;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.setting-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.format-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  background: white;
+  font-size: 0.95em;
+  margin-top: 5px;
+}
+
+.format-select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .converter-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .right-section {
+    order: -1;
+  }
+  
+  .converter-header h1 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .pdf-to-word-container {
+    padding: 15px;
+  }
+  
+  .pdf-dropbox {
+    padding: 30px 20px;
+  }
+  
+  .convert-to-word-btn,
+  .download-word-btn {
+    padding: 15px 20px;
+    font-size: 1em;
+  }
+}
